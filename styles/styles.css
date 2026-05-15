@@ -535,9 +535,12 @@ a.button:not(.primary, .secondary):focus {
 .section {
   display: block;
 
-  > .default-content {
+  > div {
     max-width: var(--content-max-width);
     margin: 0 auto;
+  }
+
+  > .default-content {
     padding: 0 24px;
     box-sizing: border-box;
   }
@@ -549,6 +552,7 @@ main > .section {
 
   &:first-of-type {
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -701,7 +705,7 @@ main .section.full-width {
   max-width: none;
 }
 
-main .section.full-width > .default-content {
+main .section.full-width > div {
   max-width: none;
   width: 100%;
   margin-inline: 0;
@@ -720,7 +724,7 @@ main .section.full-width > .default-content {
     box-sizing: border-box;
   }
 
-  main > .section.table-grid > .default-content {
+  main > .section.table-grid > div {
     max-width: none;
     margin: 0;
     padding: 0;
@@ -742,13 +746,13 @@ main .section.footnotes {
   margin: 0 1rem;
 }
 
-main .section.footnotes > .default-content {
+main .section.footnotes > div {
   border-top: 6px solid #c4cdd6;
   padding: 0 1rem;
 }
 
 @media (width >= 900px) {
-  main .section.footnotes > .default-content {
+  main .section.footnotes > div {
     padding: 0;
   }
 }

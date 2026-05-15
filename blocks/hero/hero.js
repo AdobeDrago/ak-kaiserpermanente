@@ -65,4 +65,5 @@ export default async function init(el) {
     bg.classList.add('hero-background');
     decorateBackground(bg);
   }
+
 }

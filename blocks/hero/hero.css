@@ -223,3 +223,252 @@
     }
   }
 }
+
+/* ── Default hero (non-landing) ── */
+
+/* Mobile: image on top, dark text below — no card */
+@media (width < 900px) {
+  .hero:not(.landing) {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-navy);
+  }
+
+  .hero:not(.landing) .hero-background {
+    position: relative;
+    flex: 0 0 auto;
+    min-height: clamp(220px, 48vw, 300px);
+  }
+
+  .hero:not(.landing) .hero-foreground {
+    flex: 0 0 auto;
+    display: block;
+    min-height: 0;
+    max-width: none;
+    width: 100%;
+    padding: var(--spacing-m) var(--spacing-m) var(--spacing-l);
+    background: none;
+    margin: 0;
+  }
+
+  .hero:not(.landing) .hero-foreground .fg-text {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    color: var(--color-navy);
+  }
+
+  .hero:not(.landing) .hero-foreground .fg-text .hero-heading {
+    font-size: var(--heading-font-size-xxl);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-navy);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .hero:not(.landing) .hero-foreground .fg-text p {
+    color: var(--color-text);
+    font-size: var(--body-font-size-m);
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .hero:not(.landing) .hero-foreground .fg-text a:any-link:not(.button) {
+    color: var(--color-link);
+  }
+}
+
+/* Desktop: white card floats on the left over full-bleed image */
+@media (width >= 900px) {
+  .hero:not(.landing) .hero-foreground {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: min(405px, 52vw);
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero:not(.landing) .hero-foreground .fg-text {
+    flex: 0 1 auto;
+    box-sizing: border-box;
+    width: min(50%, 626px);
+    margin: var(--spacing-xl) 0 var(--spacing-xl) 5%;
+    padding: 40px;
+    background-color: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(13, 28, 61, 0.12);
+    color: var(--color-navy);
+  }
+
+  .hero:not(.landing) .hero-foreground .fg-text .hero-heading {
+    font-size: var(--heading-font-size-xxl);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-navy);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .hero:not(.landing) .hero-foreground .fg-text p {
+    color: var(--color-text);
+    font-size: var(--body-font-size-m);
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .hero:not(.landing) .hero-foreground .fg-text a:any-link:not(.button) {
+    color: var(--color-link);
+  }
+}
+
+/* ── Landing variant ── */
+
+/* Break the section's block-content wrapper out of the max-width container */
+main .section:has(.hero.landing) > .block-content {
+  max-width: none;
+  width: 100%;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+/* Mobile: image on top, card overlaps below */
+@media (width < 900px) {
+  .hero.landing {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero.landing .hero-background {
+    position: relative;
+    flex: 0 0 auto;
+    min-height: min(56vw, 240px);
+  }
+
+  .hero.landing .hero-foreground {
+    flex: 0 0 auto;
+    display: block;
+    width: calc(100% - 32px);
+    max-width: 560px;
+    margin: -52px auto 24px;
+    min-height: 0;
+    padding: 0;
+    background: none;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero.landing .hero-foreground .fg-text {
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    border-radius: 28px;
+    border: 1px solid #dde3e8;
+    padding: 28px 24px 32px;
+    box-shadow: 0 8px 28px rgba(13, 28, 61, 0.08);
+    width: 100%;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .hero.landing .hero-foreground .fg-text .hero-heading {
+    font-size: var(--heading-font-size-xxl);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-navy);
+    margin-top: 0;
+  }
+
+  .hero.landing .hero-foreground .fg-text p {
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.55;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .hero.landing .hero-foreground .fg-text p.button-container {
+    margin-bottom: 0;
+  }
+
+  .hero.landing .hero-foreground .fg-text a.button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+    box-sizing: border-box;
+  }
+}
+
+/* Desktop: image full-bleed, card floats in the right column */
+@media (width >= 900px) {
+  .hero.landing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(440px, min(56vw, 500px));
+    overflow: hidden;
+  }
+
+  .hero.landing .hero-background {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    position: relative;
+  }
+
+  .hero.landing .hero-foreground {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--spacing-l) clamp(24px, 5vw, 72px);
+    min-height: unset;
+    background: none;
+    max-width: unset;
+    margin: 0;
+  }
+
+  .hero.landing .hero-foreground .fg-text {
+    background-color: var(--color-white);
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow:
+      0 20px 56px rgb(13 28 61 / 12%),
+      0 6px 16px rgb(13 28 61 / 8%);
+    width: 100%;
+    max-width: min(776px, 42vw);
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .hero.landing .hero-foreground .fg-text .hero-heading {
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-top: 0;
+  }
+
+  .hero.landing .hero-foreground .fg-text p {
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 8px 0;
+  }
+
+  .hero.landing .hero-foreground .fg-text p.button-container {
+    margin-bottom: 0;
+  }
+
+  .hero.landing .hero-foreground .fg-text a.button {
+    display: inline-block;
+    white-space: nowrap;
+    border-radius: 999px;
+    padding: 14px 36px;
+  }
+}
