@@ -10,6 +10,7 @@
     "components": [
       "text",
       "image",
+      "section-metadata",
       "advanced-tabs",
       "card",
       "columns",
