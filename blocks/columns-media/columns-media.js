@@ -12,18 +12,10 @@ function isDirectVideoFile(url) {
   return /\.(mp4|webm|ogg|m3u8)(\?|$)/i.test(url.pathname);
 }
 
-function isKnownEmbedProvider(url) {
-  const host = url.hostname.toLowerCase();
-  if (host.endsWith('youtube.com') || host === 'youtu.be') return true;
-  if (host.endsWith('vimeo.com')) return true;
-  return false;
-}
-
 function shouldEmbedAsMedia(href) {
-  const url = safeMediaUrl(href);
-  if (!url) return false;
-  if (isDirectVideoFile(url)) return true;
-  return isKnownEmbedProvider(url);
+  // Any valid https URL placed in the media column is treated as embeddable.
+  // safeMediaUrl already enforces http(s)-only.
+  return !!safeMediaUrl(href);
 }
 
 /** Convert watch/view URLs to iframe embed URLs */
@@ -65,13 +57,9 @@ function getAutoplayEmbedUrl(href) {
   if (isDirectVideoFile(base)) return base.href;
 
   const embed = toEmbedUrl(base);
-  if (embed.hostname.includes('youtube.com') || embed.hostname.includes('youtu.be')) {
-    embed.searchParams.set('autoplay', '1');
-  } else if (embed.hostname.includes('vimeo.com')) {
-    embed.searchParams.set('autoplay', '1');
-  } else {
-    embed.searchParams.set('autoplay', '1');
-  }
+  // Delete any pre-existing autoplay param (e.g. autoplay=false) before setting ours.
+  embed.searchParams.delete('autoplay');
+  embed.searchParams.set('autoplay', '1');
   return embed.toString();
 }
 
