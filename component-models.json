@@ -42,22 +42,118 @@
     ]
   },
   {
-    "id": "section",
+    "id": "advanced-tabs",
     "fields": [
       {
-        "component": "tab",
-        "label": "Style",
-        "name": "tab1"
+        "component": "richtext",
+        "name": "tabs",
+        "label": "Tab Names (bullet list)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "required": true,
+        "multi": false,
+        "validation": {
+          "customErrorMsg": "Image is required"
+        }
       },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "required": true,
+        "validation": {
+          "customErrorMsg": "Alt Text is required"
+        }
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "columns",
+        "label": "Number of Columns",
+        "value": 2,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Fragment Link",
+        "description": "Add a link to a fragment path (e.g. /fragments/nav/header)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "hero",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image",
+        "required": true,
+        "multi": false,
+        "validation": {
+          "customErrorMsg": "Image is required"
+        }
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "schedule",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Schedule Link",
+        "description": "Add a link to a schedule path (e.g. /schedules/events)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "section-metadata",
+    "fields": [
       {
         "component": "multiselect",
         "name": "style",
         "label": "Style",
         "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
-          },
           {
             "name": "Center",
             "value": "center"
@@ -65,6 +161,10 @@
           {
             "name": "Container",
             "value": "container"
+          },
+          {
+            "name": "Highlight",
+            "value": "highlight"
           },
           {
             "name": "Dark Scheme",
@@ -81,24 +181,12 @@
         ]
       },
       {
-        "component": "text",
-        "name": "background",
-        "label": "Background",
-        "description": "Any CSS color (hex, rgb, named) or color-token-* for design tokens or image path",
-        "valueType": "string"
-      },
-      {
-        "component": "tab",
-        "label": "Layout",
-        "name": "tab2"
-      },
-      {
         "component": "select",
         "name": "grid",
         "label": "Grid Columns",
         "options": [
           {
-            "name": "No Grid",
+            "name": "None",
             "value": ""
           },
           {
@@ -230,110 +318,12 @@
             "value": "bento"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "advanced-tabs",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "tabs",
-        "label": "Tab Names (bullet list)",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "required": true,
-        "multi": false,
-        "validation": {
-          "customErrorMsg": "Image is required"
-        }
       },
       {
         "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "required": true,
-        "validation": {
-          "customErrorMsg": "Alt Text is required"
-        }
-      },
-      {
-        "component": "richtext",
-        "name": "content",
-        "label": "Content",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "columns",
-    "fields": [
-      {
-        "component": "number",
-        "valueType": "number",
-        "name": "columns",
-        "label": "Number of Columns",
-        "value": 2,
-        "validation": {
-          "numberMin": 1,
-          "numberMax": 6
-        }
-      }
-    ]
-  },
-  {
-    "id": "fragment",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "content",
-        "label": "Fragment Link",
-        "description": "Add a link to a fragment path (e.g. /fragments/nav/header)",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "hero",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Background Image",
-        "required": true,
-        "multi": false,
-        "validation": {
-          "customErrorMsg": "Image is required"
-        }
-      },
-      {
-        "component": "richtext",
-        "name": "content",
-        "label": "Content",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "schedule",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "content",
-        "label": "Schedule Link",
-        "description": "Add a link to a schedule path (e.g. /schedules/events)",
+        "name": "background",
+        "label": "Background",
+        "description": "CSS color, color-token-*, or image path",
         "valueType": "string"
       }
     ]

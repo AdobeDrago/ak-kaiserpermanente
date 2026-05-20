@@ -48,8 +48,7 @@
               "unsafeHTML": "<div></div>"
             }
           },
-          "filter": "section",
-          "model": "section"
+          "filter": "section"
         }
       ]
     },
@@ -184,6 +183,16 @@
                   "selector": "a"
                 }
               ]
+            }
+          }
+        },
+        {
+          "title": "Section Metadata",
+          "id": "section-metadata",
+          "model": "section-metadata",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"section-metadata\"><div><div>style</div><div></div></div></div>"
             }
           }
         },
