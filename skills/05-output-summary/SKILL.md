@@ -141,6 +141,19 @@ const FOOTER_PATH = 'https://main--ak-kaiserpermanente--adobedrago.aem.page/frag
 
 This change must be made before the site goes live. It is a fork setup step —
 not part of the DA content upload.
+
+> **Localization note:** Secondary sites do not currently have non-English pages,
+> so this approach works as-is (English locale prefix is `''`, so the absolute URL
+> is used correctly). If Spanish or other language pages are added in the future,
+> `footer.js` will need to be updated again — the current implementation prepends
+> `locale.prefix` to the path, which breaks with absolute URLs. At that point,
+> replace the `loadFragment` call with:
+> ```js
+> const FOOTER_BASE = 'https://main--ak-kaiserpermanente--adobedrago.aem.page';
+> const fragment = await loadFragment(`${FOOTER_BASE}${locale.prefix}${FOOTER_PATH}`);
+> ```
+> This also requires the template site to have localized footer documents at
+> `/es/fragments/nav/footer`, `/de/fragments/nav/footer`, etc.
 ```
 
 ---
