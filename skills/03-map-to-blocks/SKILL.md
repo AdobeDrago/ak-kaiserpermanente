@@ -154,7 +154,7 @@ For each page, produce a mapping plan before any HTML is generated:
 | 11 | Legal footnotes | default content | — | footnotes |
 ```
 
-**Do not proceed to HTML generation until this mapping plan is confirmed correct.**
+Once the mapping plan is complete, proceed directly to HTML generation.
 
 ---
 

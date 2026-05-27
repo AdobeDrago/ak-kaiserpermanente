@@ -36,7 +36,7 @@ block definitions, variants, section-metadata rules, mapping logic, and DA HTML 
 
 ## Workflow — Five Steps in Sequence
 
-Run each step fully before moving to the next. Do not skip steps.
+Run all five steps fully and automatically end-to-end. Do not pause for confirmation between steps. Do not skip steps.
 
 ### Step 1 → `skills/01-discover-pages`
 Fetch the source URL. Discover and list every page in the site.

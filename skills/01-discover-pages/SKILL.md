@@ -169,7 +169,7 @@ Total pages: [N]
 | ... | | |
 ```
 
-**Do not proceed to Step 2 until both outputs are confirmed.**
+Once both outputs are complete, proceed directly to Step 2 without waiting for confirmation.
 
 ---
 
