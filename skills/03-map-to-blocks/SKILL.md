@@ -18,11 +18,6 @@ and the visual block snapshots in `skills/03-map-to-blocks/snapshots/`.
 - Third step of every secondary site migration
 - After `skills/02-extract-page-content` has produced a complete content manifest
 
-## When NOT to Use
-
-- Before the content manifest is complete
-- Generating HTML (that happens in `skills/04-generate-da-html`)
-
 ---
 
 ## Before Starting
@@ -154,11 +149,12 @@ For each page, produce a mapping plan before any HTML is generated:
 | 11 | Legal footnotes | default content | — | footnotes |
 ```
 
-**Do not proceed to HTML generation until this mapping plan is confirmed correct.**
+Once the mapping plan is complete, proceed directly to HTML generation.
 
 ---
 
 ## Output
 
-A confirmed section-by-section mapping plan for every page.
-Passed to `skills/04-generate-da-html` for HTML generation.
+A complete section-by-section mapping plan for every page.
+
+Continue directly to Step 4 (`skills/04-generate-da-html`) for HTML generation — do not pause or wait.
