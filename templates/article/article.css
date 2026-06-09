@@ -204,8 +204,44 @@
 }
 
 /* --- Footnotes section ---------------------------------------------------- */
+/* Match production: no divider bar; body-sized navy text; bold inline        */
+/* "Footnotes" header; 12px superscripts; italic review/copyright line.       */
 .article-template main .section.footnotes {
-  margin-top: var(--spacing-l);
+  margin-top: 0;
+}
+
+/* Drop the global 6px grey divider + its !important padding; keep the column
+   gutter so footnotes align with the article body. */
+.article-template main .section.footnotes > .default-content {
+  border-top: none;
+  padding: 0 24px !important;
+}
+
+.article-template main .section.footnotes p {
+  font-size: var(--body-font-size-m); /* 16px */
+  color: var(--color-article-text);   /* #0d1c3d */
+  line-height: 1.33;
+  margin: 28px 0;
+}
+
+/* "Footnotes" label is authored as <strong> at the start of the first line */
+.article-template main .section.footnotes p strong:first-child {
+  font-weight: 700;
+  color: var(--color-article-text);
+}
+
+.article-template main .section.footnotes sup {
+  font-size: 12px;
+}
+
+.article-template main .section.footnotes em {
+  font-style: italic;
+  color: var(--color-article-text);
+}
+
+.article-template main .section.footnotes a:any-link {
+  color: var(--color-blue); /* #0074ad */
+  text-decoration: underline;
 }
 
 /* --- Responsive: mobile --------------------------------------------------- */
