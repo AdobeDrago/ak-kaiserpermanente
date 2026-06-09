@@ -1,0 +1,31 @@
+.test.block {
+  padding: 1rem;
+  font-family: monospace;
+}
+
+.test.block .test-run-btn {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.test.block .test-line {
+  margin: 0;
+  padding: 2px 8px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-size: 12px;
+  line-height: 1.5;
+  border-left: 3px solid #ccc;
+}
+
+.test.block .test-line.test-ok {
+  border-left-color: #2e7d32;
+  background: #f1f8f1;
+}
+
+.test.block .test-line.test-err {
+  border-left-color: #c62828;
+  background: #fdf1f1;
+  color: #b71c1c;
+}
